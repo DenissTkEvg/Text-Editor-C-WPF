@@ -1,0 +1,43 @@
+﻿<Window x:Class="TextEd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEd"
+        mc:Ignorable="d"
+        Title="Simple Text Editor" Height="450" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="604*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="379" Margin="38,20,0,0" VerticalAlignment="Top" Width="730" Grid.ColumnSpan="3">
+            <RichTextBox x:Name="rich" HorizontalAlignment="Left" Height="289" Margin="-9,62,0,0" VerticalAlignment="Top" Width="720">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </Grid>
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="772" Margin="10,0,0,0" Grid.ColumnSpan="3">
+            <Button x:Name="buttonopen" Content="Открыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="ButtonOpen_Click" RenderTransformOrigin="-2.408,-2.537" Margin="0,0,0,-3" Height="49"/>
+            <Button x:Name="buttonsave" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="ButtonSave_Click" Margin="0,0,0,-3" Height="49"/>
+            <ComboBox Name="cmbFontFamily" Width="150" Margin="50,10,0,0" SelectionChanged="cmbFontFamily_SelectionChanged" />
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" Margin="3,10,0,0" TextBoxBase.TextChanged="cmbFontSize_TextChanged" RenderTransformOrigin="2.208,0.469" />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold" Content="Bold" Width="40" Height="30" Margin="70,10,0,0" >
+
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic" Content="Italic" Width="40" Height="30" Margin="0,10,0,0" >
+
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline" Content="Underline" Width="60" Height="30" Margin="0,10,0,0" >
+
+            </ToggleButton>
+
+
+        </ToolBar>
+
+    </Grid>
+</Window>
